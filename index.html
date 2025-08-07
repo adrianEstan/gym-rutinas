@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Rutinas de Gym</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {},
+      },
+      plugins: [tailwind.typography],
+    };
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body class="bg-gray-100 text-gray-800 font-sans min-h-screen flex flex-col">
@@ -24,7 +32,7 @@
       <a href="?rutina=espalda-biceps" class="bg-white rounded-xl p-4 shadow hover:bg-blue-100 transition">Espalda y Bíceps</a>
     </div>
     <hr class="my-6">
-    <div id="contenido" class="prose max-w-none bg-white p-6 rounded-xl shadow"></div>
+    <div id="contenido" class="prose prose-blue max-w-none bg-white p-6 rounded-xl shadow"></div>
   </main>
 
   <footer class="bg-gray-200 text-center text-sm text-gray-600 py-4">
