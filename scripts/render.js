@@ -1,16 +1,17 @@
-const params = new URLSearchParams(window.location.search);
-const rutina = params.get("rutina");
+document.getElementById("rutina-selector").addEventListener("change", function () {
+  const selected = this.value;
+  const container = document.getElementById("rutina-container");
 
-if (rutina) {
-  fetch(`markdown/${rutina}.md`)
+  fetch("rutinas/" + selected)
     .then(response => {
-      if (!response.ok) throw new Error("No encontrado");
+      if (!response.ok) throw new Error("Archivo no encontrado");
       return response.text();
     })
-    .then(md => {
-      document.getElementById("contenido").innerHTML = marked.parse(md);
+    .then(html => {
+      container.innerHTML = html;
     })
-    .catch(err => {
-      document.getElementById("contenido").innerHTML = `<p>No se encontró la rutina para "${rutina}".</p>`;
+    .catch(error => {
+      container.innerHTML = "<p>Error al cargar la rutina.</p>";
+      console.error(error);
     });
-}
+});
