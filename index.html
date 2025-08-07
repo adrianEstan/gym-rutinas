@@ -6,37 +6,89 @@
   <title>Rutinas Semanales</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom right, #f0f4f8, #dfe9f3);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 1rem 1rem;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      color: #333;
+    }
+
+    main {
+      flex: 1;
       padding: 1rem;
+      max-width: 800px;
+      margin: 0 auto;
+      width: 100%;
     }
 
     select {
       width: 100%;
       padding: 1rem;
-      margin-bottom: 1rem;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      background: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
 
     #rutina-container {
-      border: 1px solid #ccc;
-      padding: 1rem;
-      border-radius: 8px;
-      background: #f9f9f9;
+      background: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem 1rem 2rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    footer img {
+      width: 40px;
+      height: 40px;
+      margin-top: 0.5rem;
+      opacity: 0.7;
     }
   </style>
 </head>
 <body>
-  <select id="rutina-selector">
-    <option value="hombros-triceps.html">Hombros y Tríceps</option>
-    <option value="cardio-core.html">Cardio y Core</option>
-    <option value="piernas-gluteos.html">Piernas y Glúteos</option>
-    <option value="espalda-biceps.html">Espalda y Bíceps</option>
-  </select>
+  <header>
+    <h1>📅 Rutinas Semanales de Entrenamiento</h1>
+  </header>
 
-  <div id="rutina-container">
-    <p>Selecciona una rutina para ver el contenido.</p>
-  </div>
+  <main>
+    <select id="rutina-selector">
+      <option value="hombros-triceps.html">💪 Hombros y Tríceps</option>
+      <option value="cardio-core.html">🔥 Cardio y Core</option>
+      <option value="piernas-gluteos.html">🦵 Piernas y Glúteos</option>
+      <option value="espalda-biceps.html">🏋️ Espalda y Bíceps</option>
+    </select>
+
+    <div id="rutina-container">
+      <p>Selecciona una rutina para ver el contenido.</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Hecho con 💪 por Adrián Estañ González</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/CreativeCommons_by.svg/512px-CreativeCommons_by.svg.png" alt="Símbolo de copyright">
+  </footer>
 
   <script src="scripts/render.js"></script>
 </body>
