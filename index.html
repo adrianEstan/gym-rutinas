@@ -4,20 +4,34 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Rutinas de Gym</title>
-</head>
-<body>
-  <h1>Selecciona tu rutina</h1>
-  <ul>
-    <li><a href="?dia=lunes">Lunes</a></li>
-    <li><a href="?dia=martes">Martes</a></li>
-    <li><a href="?dia=miercoles">Miércoles</a></li>
-    <li><a href="?dia=jueves">Jueves</a></li>
-    <li><a href="?dia=viernes">Viernes</a></li>
-  </ul>
-  <hr />
-  <div id="contenido"></div>
-
+  <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans min-h-screen flex flex-col">
+
+  <header class="bg-blue-600 text-white p-6 shadow-md">
+    <div class="container mx-auto">
+      <h1 class="text-3xl font-bold">🏋️ Rutinas de Gym</h1>
+      <p class="text-sm mt-1">Planifica tus entrenamientos semanales</p>
+    </div>
+  </header>
+
+  <main class="container mx-auto flex-grow p-6">
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mb-6">
+      <a href="?dia=lunes" class="bg-white rounded-xl p-4 shadow hover:bg-blue-100 transition">Lunes</a>
+      <a href="?dia=martes" class="bg-white rounded-xl p-4 shadow hover:bg-blue-100 transition">Martes</a>
+      <a href="?dia=miercoles" class="bg-white rounded-xl p-4 shadow hover:bg-blue-100 transition">Miércoles</a>
+      <a href="?dia=jueves" class="bg-white rounded-xl p-4 shadow hover:bg-blue-100 transition">Jueves</a>
+      <a href="?dia=viernes" class="bg-white rounded-xl p-4 shadow hover:bg-blue-100 transition">Viernes</a>
+    </div>
+    <hr class="my-6">
+    <div id="contenido" class="prose max-w-none bg-white p-6 rounded-xl shadow"></div>
+  </main>
+
+  <footer class="bg-gray-200 text-center text-sm text-gray-600 py-4">
+    Hecho por Adrián Estañ González
+  </footer>
+
   <script src="scripts/render.js"></script>
 </body>
 </html>
