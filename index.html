@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Rutinas de Gym</title>
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
+
+  <!-- Tailwind CSS + Typography plugin -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -13,6 +13,12 @@
       plugins: [tailwind.typography],
     }
   </script>
+
+  <!-- Highlight.js para resaltado de código -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
+  
+  <!-- markdown-it -->
   <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
 </head>
@@ -20,17 +26,16 @@
 
 <header class="bg-blue-600 text-white p-6 shadow-md">
   <div class="container mx-auto">
-    <h1 class="text-3xl font-bold">🏋️ Rutinas de Gym</h1>
-    <p class="text-sm mt-1">Planifica tus entrenamientos por grupo muscular</p>
+    <h1 class="text-3xl font-bold text-center sm:text-left">🏋️ Rutinas de Gym</h1>
   </div>
 </header>
 
-<main class="container mx-auto flex-grow p-6">
+<main class="container mx-auto flex-grow p-4 sm:p-6">
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-    <a href="?rutina=hombros-triceps" class="bg-white rounded-xl p-4 shadow hover:bg-blue-100 transition">Hombros y Tríceps</a>
-    <a href="?rutina=cardio-core" class="bg-white rounded-xl p-4 shadow hover:bg-blue-100 transition">Cardio y Core</a>
-    <a href="?rutina=piernas-gluteos" class="bg-white rounded-xl p-4 shadow hover:bg-blue-100 transition">Piernas y Glúteos</a>
-    <a href="?rutina=espalda-biceps" class="bg-white rounded-xl p-4 shadow hover:bg-blue-100 transition">Espalda y Bíceps</a>
+    <a href="?rutina=hombros-triceps" class="bg-white rounded-xl p-4 shadow hover:bg-blue-100 transition text-center">Hombros y Tríceps</a>
+    <a href="?rutina=cardio-core" class="bg-white rounded-xl p-4 shadow hover:bg-blue-100 transition text-center">Cardio y Core</a>
+    <a href="?rutina=piernas-gluteos" class="bg-white rounded-xl p-4 shadow hover:bg-blue-100 transition text-center">Piernas y Glúteos</a>
+    <a href="?rutina=espalda-biceps" class="bg-white rounded-xl p-4 shadow hover:bg-blue-100 transition text-center">Espalda y Bíceps</a>
   </div>
   <hr class="my-6">
   <div id="contenido" class="prose prose-blue max-w-none bg-white p-6 rounded-xl shadow overflow-x-auto"></div>
@@ -51,7 +56,7 @@
           return hljs.highlight(str, { language: lang }).value;
         } catch (__) {}
       }
-      return ''; // use external default escaping
+      return ''; 
     }
   });
 
