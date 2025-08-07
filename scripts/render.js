@@ -1,8 +1,8 @@
 const params = new URLSearchParams(window.location.search);
-const dia = params.get("dia");
+const rutina = params.get("rutina");
 
-if (dia) {
-  fetch(`markdown/${dia}.md`)
+if (rutina) {
+  fetch(`markdown/${rutina}.md`)
     .then(response => {
       if (!response.ok) throw new Error("No encontrado");
       return response.text();
@@ -11,6 +11,6 @@ if (dia) {
       document.getElementById("contenido").innerHTML = marked.parse(md);
     })
     .catch(err => {
-      document.getElementById("contenido").innerHTML = `<p>No se encontró la rutina para "${dia}".</p>`;
+      document.getElementById("contenido").innerHTML = `<p>No se encontró la rutina para "${rutina}".</p>`;
     });
 }
