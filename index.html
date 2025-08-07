@@ -2,94 +2,51 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rutinas Semanales</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to bottom right, #f0f4f8, #dfe9f3);
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
-    header {
-      text-align: center;
-      padding: 2rem 1rem 1rem;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-      color: #333;
-    }
-
-    main {
-      flex: 1;
-      padding: 1rem;
-      max-width: 800px;
-      margin: 0 auto;
-      width: 100%;
-    }
-
-    select {
-      width: 100%;
-      padding: 1rem;
-      font-size: 1.1rem;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      margin-bottom: 1.5rem;
-      background: #fff;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    }
-
-    #rutina-container {
-      background: white;
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      transition: all 0.3s ease;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1.5rem 1rem 2rem;
-      font-size: 0.9rem;
-      color: #666;
-    }
-
-    footer img {
-      width: 40px;
-      height: 40px;
-      margin-top: 0.5rem;
-      opacity: 0.7;
-    }
-  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/833/833472.png" />
 </head>
-<body>
-  <header>
-    <h1>📅 Rutinas Semanales de Entrenamiento</h1>
+<body class="min-h-screen flex flex-col bg-gradient-to-br from-sky-50 to-blue-100 font-sans text-gray-800">
+
+  <!-- HEADER -->
+  <header class="text-center py-10 px-4">
+    <h1 class="text-4xl font-extrabold leading-tight tracking-tight">
+      📅 Rutinas Semanales de Entrenamiento
+    </h1>
+    <p class="text-lg text-gray-600 mt-2">Selecciona una rutina para ponerte en forma 💪</p>
   </header>
 
-  <main>
-    <select id="rutina-selector">
-      <option value="hombros-triceps.html">💪 Hombros y Tríceps</option>
-      <option value="cardio-core.html">🔥 Cardio y Core</option>
-      <option value="piernas-gluteos.html">🦵 Piernas y Glúteos</option>
-      <option value="espalda-biceps.html">🏋️ Espalda y Bíceps</option>
-    </select>
+  <!-- MAIN -->
+  <main class="flex-1 px-4 sm:px-6 md:px-8 max-w-3xl w-full mx-auto space-y-6">
 
-    <div id="rutina-container">
-      <p>Selecciona una rutina para ver el contenido.</p>
+    <!-- SELECT -->
+    <div>
+      <label for="rutina-selector" class="block mb-2 text-lg font-medium">Elige tu rutina</label>
+      <select
+        id="rutina-selector"
+        class="w-full p-3 text-base border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white transition"
+      >
+        <option disabled selected value="">-- Selecciona una rutina --</option>
+        <option value="hombros-triceps.html">💪 Hombros y Tríceps</option>
+        <option value="cardio-core.html">🔥 Cardio y Core</option>
+        <option value="piernas-gluteos.html">🦵 Piernas y Glúteos</option>
+        <option value="espalda-biceps.html">🏋️ Espalda y Bíceps</option>
+      </select>
     </div>
+
+    <!-- CONTENEDOR DE RUTINA -->
+    <section id="rutina-container" class="bg-white rounded-2xl shadow-md p-6 transition-all text-gray-700">
+      <p class="text-center">Selecciona una rutina para ver el contenido.</p>
+    </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 Hecho con 💪 por Adrián Estañ González</p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/CreativeCommons_by.svg/512px-CreativeCommons_by.svg.png" alt="Símbolo de copyright">
+  <!-- FOOTER -->
+  <footer class="text-center text-sm text-gray-500 py-10">
+    <p>&copy; 2025 Hecho por Adrián Estañ González</p>
   </footer>
 
+  <!-- SCRIPT -->
   <script src="scripts/render.js"></script>
 </body>
 </html>
